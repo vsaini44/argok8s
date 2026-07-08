@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: dep1
+
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      red: green
+  template:
+    metadata:
+      labels:
+        red: green
+    spec:
+      containers:
+      - name: cont1
+        image: nginx:latest
